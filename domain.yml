@@ -1,0 +1,82 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- call_path
+- inform
+- bot_challenge
+- app_path
+entities:
+- loc
+- restaurant
+- MOC
+- dish
+- quant
+- email
+
+slots:
+  loc:
+    type: text
+    influence_conversation: false
+  MOC:
+    type: text
+    influence_conversation: false
+  email:
+    type: text
+    influence_conversation: false
+  restaurant:
+    type: text
+    influence_conversation: false
+  dish:
+    type: list
+    influence_conversation: false
+  quant:
+    type: list
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Welcome to Gobaskt automated food ordering service. Please mention name of the restaurant where you want to place food order or say order options to learn how you can place order from your mobile phone.
+  utter_ask_email:
+  - text: Can you please provide me you E-mail ID where you want to recieve the reciept.
+  utter_ask_loc:
+  - text: In which locality should I search the restaurants?
+  utter_ask_MOC:
+  - text: Would you like Eat-in, Take away or Delivery?
+  utter_ask_dish:
+  - text: What would you like Eat today?
+  utter_ask_quant:
+  - text: What quant?
+  utter_goodbye:
+  - text: Thankyou for shopping with Us
+  utter_goodbye_nobuy:
+  - text: Sad to see you go
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_purchase_succesful:
+  - text: "res= {restaurant} \n loc= {loc} \n MOC= {MOC} \n dish= {dish} \n quant= {quant} \n email= {email}"
+  utter_app_path:
+  - text: I will be sending the app details on your email.
+actions:
+- action_gen_inv
+- action_send_inv
+- action_repeat_order
+
+
+forms:
+  order_form:
+    loc:
+    - type: from_entity
+      entity: loc
+    MOC:
+    - type: from_entity
+      entity: MOC
+    dish:
+    - type: from_entity
+      entity: dish
+    email:
+    - type: from_entity
+      entity: email

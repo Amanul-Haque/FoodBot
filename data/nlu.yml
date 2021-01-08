@@ -1,0 +1,153 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Yes sure
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: call_path
+  examples: |
+    - I would like to order from [Dominos](restaurant)
+    - I need food from [Pizza Hut](restaurant)
+    - Order from [Pizza Hut](restaurant)
+    - From [KFC](restaurant)
+    - I want to get food from [Dominos](restaurant)
+- intent: app_path
+  examples: |
+    - I want to download the app
+    - I want to order from my phone
+    - order options
+    - Please send me the app link
+    - I like the app way
+- intent: inform
+  examples: |
+    - I live in [mumbai](loc)
+    - I am from [Delhi](loc)
+    - [Rajendra Nagar](loc)
+    - [Nagpur](loc)
+    - [Take away](MOC)
+    - I would like it to be [delivered](MOC)
+    - [Delivery](MOC)
+    - I will [eat in](MOC)
+    - my pin code is [456789](loc)
+    - I live in [123654](loc)
+    - my area is [875931](loc)
+    - my zip code is [485697](loc)
+    - [one](quant) [burger](dish) and [two](quant) [cokes](dish)
+    - [a](quant) [Pizza](dish) and [five](quant) [burger](dish)
+    - [one](quant) [pizza](dish) [two](quant) [burgers](dish) and [three](quant) [cokes](dish)
+    - just [one](quant) [coke](dish)
+    - [three](quant) [pizza](dish) and [a](quant) [burger](dish)
+    - [one](quant) [pizza](dish) and [a](quant) [coke](dish)
+    - [amanul.h.2030@gmail.com](email)
+    - [aqwsedrft@outlook.com](email)
+    - [Amann1234@reddif.com](email)
+    - [rngIsshit@yahoo.in](email)
+    - [carftkriya@zycv.in](email)
+    - [12RR@likndin.com](email)
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- regex: quant
+  examples: |
+   - [0-9]{2}
+- regex: loc
+  examples: |
+    - [0-9]{6}
+- regex: email
+  examples: |
+    - [a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]
+- synonym: "1"
+  examples: |
+    - one
+    - a
+    - One
+    - single
+- synonym: "2"
+  examples: |
+    - two
+    - too
+    - Two
+    - double
+
+- synonym: "3"
+  examples: |
+    - three
+    - tri
+    - Three
+
+- synonym: "4"
+  examples: |
+    - Four
+    - four
+
+- synonym: "5"
+  examples: |
+    - Five
+    - five
+
+- synonym: "6"
+  examples: |
+    - six
+    - Six
+
+- synonym: "7"
+  examples: |
+    - seven
+    - Seven
+
+- synonym: "8"
+  examples: |
+    - eight
+    - Eight
+
+- synonym: "9"
+  examples: |
+    - nine
+    - Nine

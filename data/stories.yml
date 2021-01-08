@@ -1,0 +1,32 @@
+version: "2.0"
+
+stories:
+- story: call_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: call_path
+  - slot_was_set:
+    - restaurant: Dominos
+  - action: order_form
+  - active_loop: order_form
+  - slot_was_set:
+      - loc: mumbai
+      - MOC: Take-in
+      - dish: [Pizza,burger,coke]
+      - quant: [two,two,three]
+      - email: amanul.h.2030@gmail.com
+  - action: order_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_repeat_order
+  - intent: affirm
+  - action: action_gen_inv
+  - action: action_send_inv
+- story: Ordering through app
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: app_path
+  - action: utter_app_path

@@ -1,0 +1,19 @@
+rules:
+  - rule: activate order form
+    steps:
+      - intent: call_path
+      - action: order_form
+      - active_loop: order_form
+
+  - rule: submit form
+    condition:
+    - active_loop: order_form
+    steps:
+    - action: order_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: action_repeat_order
+    - intent: affirm
+    - action: action_gen_inv
+    wait_for_user_input: false
